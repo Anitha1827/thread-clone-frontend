@@ -1,14 +1,15 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    // Proxy configuration to handle CORS during development
+    // Get rid of the CORS error
     proxy: {
       "/api": {
-        target: "https://thread-clone-backend.onrender.com",
+        target: "https://thread-clone-backend.onrender.com", //http://localhost:5000
         changeOrigin: true,
         secure: false,
       },

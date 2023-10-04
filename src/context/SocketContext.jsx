@@ -16,6 +16,7 @@ export const SocketContextProvider = ({ children }) => {
 
   useEffect(() => {
     const socket = io("https://thread-clone-backend.onrender.com", {
+      //http://localhost:5000
       query: {
         userId: user?._id,
       },
