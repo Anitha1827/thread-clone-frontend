@@ -13,7 +13,13 @@ const SuggestedUsers = () => {
       setLoading(true);
       try {
         const res = await fetch(
-          `https://thread-clone-backend.onrender.com/api/users/suggested`
+          `https://thread-clone-backend.onrender.com/api/users/suggested`,
+          {
+            credentials: "include",
+            headers: {
+              Authorization: "Bearer YourAuthTokenHere",
+            },
+          }
         );
         const data = await res.json();
         if (data.error) {
