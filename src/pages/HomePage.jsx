@@ -15,9 +15,7 @@ const HomePage = () => {
       setLoading(true);
       setPosts([]);
       try {
-        const res = await fetch(
-          `${import.meta.env.REACT_APP_API}/api/posts/feed`
-        );
+        const res = await fetch(`/api/posts/feed`);
         const data = await res.json();
         if (data.error) {
           showToast("Error", data.error, "error");

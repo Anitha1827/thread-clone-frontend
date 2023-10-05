@@ -42,7 +42,7 @@ const MessageInput = ({ setMessages }) => {
     setIsSending(true);
 
     try {
-      const res = await fetch(`${import.meta.env.REACT_APP_API}/api/messages`, {
+      const res = await fetch(`/api/messages`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
