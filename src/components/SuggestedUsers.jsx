@@ -16,9 +16,6 @@ const SuggestedUsers = () => {
           `https://thread-clone-backend.onrender.com/api/users/suggested`,
           {
             credentials: "include",
-            headers: {
-              Authorization: "Bearer YourAuthTokenHere",
-            },
           }
         );
         const data = await res.json();
