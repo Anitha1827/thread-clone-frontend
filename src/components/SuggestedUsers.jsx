@@ -12,12 +12,7 @@ const SuggestedUsers = () => {
     const getSuggestedUsers = async () => {
       setLoading(true);
       try {
-        const res = await fetch(
-          `https://thread-clone-backend.onrender.com/api/users/suggested`,
-          {
-            credentials: "include",
-          }
-        );
+        const res = await fetch(`/api/users/suggested`);
         const data = await res.json();
         if (data.error) {
           showToast("Error", data.error, "error");
